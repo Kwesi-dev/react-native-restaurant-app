@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <View style={styles.container}>
         <Text style={styles.lightheader}>Grab your</Text>
-        <Text style={styles.boldheader}>Delicious meal!</Text>
+        <Text style={styles.boldheader}>delicious meal!</Text>
     </View>
   )
 }
@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
         marginTop: 50
     },
     lightheader:{
-        fontSize: 30
+        fontSize: 35
     },
     boldheader:{
-        fontSize: 30,
+        fontSize: 35,
         fontWeight: "Bold"
     }
 })
