@@ -1,4 +1,4 @@
-import { View, FlatList, Image, StyleSheet, Dimensions } from "react-native"
+import { View, FlatList, Image, Dimensions } from "react-native"
 import { restaurants } from "../restaurantsData"
 export default function Restaurantscreen({navigation, route}){
     const { id } = route.params
