@@ -26,12 +26,11 @@ const styles = StyleSheet.create({
     image:{
         height: 30,
         width: 30,
-        objectFit: "cover"
     },
     ImageContainer:{
         height: 50,
         width: 50,
-        borderRadius: "50%",
+        borderRadius: 50,
         backgroundColor: "white",
         alignItems: "center",
         justifyContent: "center",

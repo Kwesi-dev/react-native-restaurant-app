@@ -3,9 +3,9 @@ import { restaurants } from "../restaurantsData"
 import React from "react"
 import { FlatList } from "react-native"
 import RestaurantItem from "./RestaurantItem"
-export default function Restaurants({ navigation }){
+export default function Restaurants({ navigation, selected }){
     const [loading, setLoading] = React.useState(false)
-    
+    const filteredRestaurants = restaurants.filter((restaurant) => restaurant.term === selected)
     React.useEffect(()=>{
         let componentMounted = true
         setLoading(true) 
@@ -24,24 +24,31 @@ export default function Restaurants({ navigation }){
             {loading ? <ActivityIndicator size="large" marginHorizontal={100}/>
                 :
                 <FlatList
-                data={restaurants}
+                data={filteredRestaurants}
                 keyExtractor={(restaurant)=> restaurant.key}
                 renderItem={({item}) => {
                     return <RestaurantItem item={item} navigation={navigation}/>
                     }}
+                showsVerticalScrollIndicator={false}
                 />
             }
+            {filteredRestaurants.length === 0 && <Text style={styles.error}>No Restaurant found at the moment</Text>}
        </View>
     )
 }
 const styles = StyleSheet.create({
     container:{
-        marginHorizontal: 25,
-        marginVertical: 15,
+        flex: 1
     },
     header:{
         fontWeight: "bold",
         fontSize: 20,
-        paddingBottom: 15
+        marginBottom: 15,
+        marginHorizontal: 25,
+    },
+    error:{
+        fontWeight: "bold",
+        textAlign: "center",
+        marginBottom: 40
     }
 })

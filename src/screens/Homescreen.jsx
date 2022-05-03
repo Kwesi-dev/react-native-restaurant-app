@@ -33,11 +33,18 @@ export default function Homescreen({ navigation }){
     },
   ]
     return(
-        <View>
+        <View style={styles.container}>
             <Header/>
             <Search setSelected={setSelected}/>
             <Categories setSelected={setSelected} selected={selected} CategoryItems={CategoryItems}/>
-            <Restaurants navigation={navigation}/>
+            <Restaurants navigation={navigation} selected={selected}/>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "lightgray",
+    },
+})

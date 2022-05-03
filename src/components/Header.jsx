@@ -10,15 +10,15 @@ const Header = () => {
 
 const styles = StyleSheet.create({
     container:{
-        marginHorizontal: 25,
-        marginTop: 50
+        paddingHorizontal: 25,
+        marginTop: 20
     },
     lightheader:{
-        fontSize: 35
+        fontSize: 25
     },
     boldheader:{
-        fontSize: 35,
-        fontWeight: "Bold"
+        fontSize: 25,
+        fontWeight: "bold"
     }
 })
 export default Header

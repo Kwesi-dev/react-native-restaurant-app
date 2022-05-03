@@ -3,7 +3,7 @@ import { elevation } from "../commonStyles"
 import React from "react"
 export default function RestaurantItem({ item, navigation }){
     return(
-        <TouchableOpacity onPress={() => navigation.navigate("Restaurant")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Restaurant", {"id": item.term})}>
             <View style={[styles.container, styles.elevation]}>
                 <Image source={item.Image} style={styles.image}/>
                 <View style={styles.infoContainer}>
@@ -19,28 +19,30 @@ export default function RestaurantItem({ item, navigation }){
 }
 const styles = StyleSheet.create({
     container:{
-        marginVertical: 15,
+        marginHorizontal: 25,
+        marginVertical: 10,
         borderRadius: 50,
         backgroundColor:"white",
         flexDirection: "row",
         alignSelf: "stretch",
-        height: 100,
+        height: 80,
         alignItems: "center"
     },
     elevation,
     image:{
-        width: 75,
-        height: 75,
+        width: 65,
+        height: 65,
         borderRadius: 50,
         marginLeft: 10
     },
     infoContainer:{
+        flex: 1,
         paddingHorizontal: 10
     },
     header:{
         fontSize: 18,
         fontWeight: "bold",
-        marginBottom: 4
+        marginBottom: 4,
     },
     info:{
         flexDirection: "row"
