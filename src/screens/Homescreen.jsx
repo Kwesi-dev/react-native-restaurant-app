@@ -45,6 +45,6 @@ export default function Homescreen({ navigation }){
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "lightgray",
+      backgroundColor: "rgb(247, 233, 233)",
     },
 })
